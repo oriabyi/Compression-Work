@@ -43,7 +43,7 @@ void							Server::sendStats(class Server *server, boost::asio::ip::tcp::socket 
 	}
 	catch (std::exception &ex)
 	{
-		std::cerr << "Client ERROR: " << ex.what() << "!\n";
+		std::cerr << "Server ERROR: " << ex.what() << "!\n";
 	}
 }
 

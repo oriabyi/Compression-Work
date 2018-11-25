@@ -14,8 +14,8 @@ CLANGPP		:=	clang++
 CFLAGS		:=	-Wall -Wextra -Werror -std=c++11
 BFLAGS		:=	-lboost_system
 
-IBFLAG		:=	-I /Users/ariabyi/.brew/Cellar/boost/1.67.0_1/include/
-LBFLAG		:=	-L /Users/ariabyi/.brew/Cellar/boost/1.67.0_1/lib
+IBFLAG		:=	-I /Users/ariabyi/.brew/Cellar/boost/1.68.0/include/
+LBFLAG		:=	-L /Users/ariabyi/.brew/Cellar/boost/1.68.0/lib
 
 IFLAGS		:=	-I $(SRC_DI)Server.Class.hpp -I $(SHARED_DI)Header.Class.hpp -I $(SHARED_DI)Stats.Class.hpp -I $(SHARED_DI)general.hpp
 

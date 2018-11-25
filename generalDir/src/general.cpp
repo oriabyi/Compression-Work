@@ -25,15 +25,6 @@ int							areNumbers(char *str)
 	return (0);
 }
 
-char						*ft_strnew(size_t size)
-{
-	char					*ret;
-	
-	if (!(ret = (char *)malloc(sizeof(*ret) * (size + 1))))
-		return (nullptr);
-	return ((char *)std::memset(ret, 0, size + 1));
-}
-
 size_t						numLen(int numb)
 {
 	size_t					lenNumber;
@@ -46,23 +37,3 @@ size_t						numLen(int numb)
 	return (lenNumber);
 }
 
-char						*ft_itoa(int number)
-{
-	char					*ret;
-	ssize_t					ssizetNumber;
-	size_t					lenght;
-
-	lenght = numLen(number);
-	if (!(ret = ft_strnew(lenght)))
-		return (nullptr);
-	ssizetNumber = (ssize_t)number;
-	if (ssizetNumber < 0)
-	{
-		ret[0] = '-';
-		ssizetNumber = -ssizetNumber;
-	}
-	ret[--lenght] = (char)(ssizetNumber % 10 + '0');
-	while (ssizetNumber /= 10)
-		ret[--lenght] = (char)(ssizetNumber % 10 + '0');
-	return (ret);
-}

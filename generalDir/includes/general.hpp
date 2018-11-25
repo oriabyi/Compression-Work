@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include <cstring>
+#include <cstdlib>
 
 # include "../../generalDir/includes/Header.Class.hpp"
 # include "../../generalDir/includes/Stats.Class.hpp"
@@ -24,9 +25,7 @@
 # define ERROR_IO			0
 
 
-char						*ft_itoa(int number);
 int							areNumbers(char *str);
-char						*ft_strnew(size_t size);
 int							checkIO(ssize_t len, boost::system::error_code error);
 
 template <typename T>

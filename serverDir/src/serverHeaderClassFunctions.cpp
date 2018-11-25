@@ -1,33 +1,37 @@
 # include "../includes/Server.Class.hpp"
 
+
+void							Server::getElement(class Server *server, boost::asio::ip::tcp::socket *socket, size_t *magic, size_t bytes)
+{
+	ssize_t						lenMessage;
+	*magic = 0;
+
+	lenMessage = readSafe(socket, magic, bytes);
+	server->setBytesReceived((unsigned)(server->getBytesReceived() + lenMessage));
+}
+
 short 							Server::getCheckHeader(class Server *server, boost::asio::ip::tcp::socket *socket)
 {
 	size_t						magic;
-	ssize_t						lenMessage;
-	
+
 	try
 	{
-		magic = 0;
-		lenMessage = readSafe(socket, &magic, sizeof(int));
-		server->setBytesReceived((unsigned)(server->getBytesReceived() + lenMessage));
+		getElement(server, socket, &magic, sizeof(int));
 		if (magic != MAGIC_VALUE)
 			return  (WRONGMAGICVALUE_RQ);
 		server->setMagicValue((int)magic);
-		
-		
-		magic = 0;
-		lenMessage = readSafe(socket, &magic, sizeof(short));
-		server->setBytesReceived((unsigned)(server->getBytesReceived() + lenMessage));
+
+		getElement(server, socket, &magic, sizeof(short));
 		if (magic > BUFFER_SIZE)
 			return (WRONGLENGHT_RQ);
 		server->setLength((short)magic);
-		
-		
-		magic = 0;
-		lenMessage = readSafe(socket, &magic, sizeof(short));
-		server->setBytesReceived((unsigned)(server->getBytesReceived() + lenMessage));
+
+		getElement(server, socket, &magic, sizeof(short));
 		if (magic < 1 || magic > 4)
+		{
+			std::cout << "ERORR\n";
 			return (WRONGREQUESCODE_RQ);
+		}
 		server->setRequestCode((short)magic);
 	}
 	catch (std::exception &ex)

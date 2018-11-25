@@ -38,12 +38,12 @@ If server gets empty string ("\0")
 
 The project is written in C++11,  developed on Mac OS X 10.13.3, BuildVersion - 17D47.
 Apple LLVM version 9.0.0 (clang-900.0.39.2).
-I used library boost (1.67.0_1) for work with network.
+I used library boost (1.68) for work with network.
 clang++ -Wall -Wextra -Werror -std=c++11 -lboost_system
 
 2.1. How to install boost library
 	2.1.1. Write this command in terminal "brew install boost";
-	2.1.2. Then replace in serverDir/Makefile lines 17 and 18 "/Users/ariabyi/.brew/Cellar/boost/1.67.0_1" 
+	2.1.2. Then replace in serverDir/Makefile lines 17 and 18 "/Users/ariabyi/.brew/Cellar/boost/1.68" 
 			on address which you will get after command in terminal "brew link boost";
 	2.1.3. Do the same with clientDir/Makefile.
 

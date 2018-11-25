@@ -1,22 +1,22 @@
-# include "../includes/Client.class.hpp"
+# include "../includes/Client.Class.hpp"
 
 Client::Client()
 {
 	this->setMagicValue(MAGIC_VALUE);
 }
 
-void							Client::initHeader(class Client *client, char *requestCode)
+void									Client::initHeader(class Client *client, char *requestCode)
 {
 	client->setMagicValue(MAGIC_VALUE);
 	client->setLength(0);
 	client->setRequestCode((short)(std::strtol(requestCode, nullptr, 10)));
 }
 
-void							Client::getSendMessage(class Client *client, boost::asio::ip::tcp::socket *socket)
+void									Client::getSendMessage(class Client *client, boost::asio::ip::tcp::socket *socket)
 {
-	std::string					message;
-	ssize_t						lenMessage;
-	boost::system::error_code	error;
+	std::string							message;
+	ssize_t								lenMessage;
+	boost::system::error_code			error;
 	
 	std::cout << "Enter message: ";
 	std::getline(std::cin, message);
@@ -34,9 +34,9 @@ void							Client::getSendMessage(class Client *client, boost::asio::ip::tcp::so
 	}
 }
 
-void							Client::getStats(class Client *client, boost::asio::ip::tcp::socket *socket)
+void									Client::getStats(class Client *client, boost::asio::ip::tcp::socket *socket)
 {
-	ssize_t						tempElementOfHeader;
+	ssize_t								tempElementOfHeader;
 	
 	try
 	{

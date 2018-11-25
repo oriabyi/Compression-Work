@@ -1,4 +1,4 @@
-# include "../includes/Client.class.hpp"
+# include "../includes/Client.Class.hpp"
 # include "../../generalDir/includes/general.hpp"
 
 int									checkArguments(int ac, char **av)

@@ -1,8 +1,8 @@
-# include "../includes/Client.class.hpp"
+# include "../includes/Client.Class.hpp"
 
-void				Client::getHeader(class Client *client, boost::asio::ip::tcp::socket *socket)
+void						Client::getHeader(class Client *client, boost::asio::ip::tcp::socket *socket)
 {
-	ssize_t			tempElementOfHeader;
+	ssize_t					tempElementOfHeader;
 
 	try
 	{
@@ -24,7 +24,7 @@ void				Client::getHeader(class Client *client, boost::asio::ip::tcp::socket *so
 	}
 }
 
-void				Client::sendHeader(class Client *client, boost::asio::ip::tcp::socket *socket)
+void						Client::sendHeader(class Client *client, boost::asio::ip::tcp::socket *socket)
 {
 	try
 	{

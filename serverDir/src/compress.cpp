@@ -1,9 +1,9 @@
 # include "../includes/Server.Class.hpp"
 # include "../../generalDir/includes/general.hpp"
 
-int							countChars(const char *str, char c)
+int									countChars(const char *str, char c)
 {
-	int     				counter;
+	int     						counter;
 	
 	counter = 0;
 	if (str == nullptr)
@@ -13,7 +13,7 @@ int							countChars(const char *str, char c)
 	return (counter);
 }
 
-int							checkStr(char *str, char **buffer, short *requestCode)
+int									checkStr(char *str, short *requestCode)
 {
 	if (str == nullptr || *str == '\0')
 	{
@@ -36,42 +36,36 @@ int							checkStr(char *str, char **buffer, short *requestCode)
 	{
 		*requestCode = CONTAINS_BAD_CHARS;
 	}
-	*buffer = nullptr;
 	return (1);
 }
 
-char						*algCompresss(char *str, short *requestCode)
+std::string 						algCompress(char *str, short *requestCode)
 {
-	char					temp;
-	int						numOfChars;
-	char					*buffer;
-	char					*tempNum;
-	
-	if (checkStr(str, &buffer, requestCode) == 1)
-		return (buffer);
-	buffer = ft_strnew(std::strlen(str));
+	char							temp;
+	int								numOfChars;
+	std::string						result;
+
+	if (checkStr(str, requestCode) == 1)
+		return (result);
 	while (*str)
 	{
 		temp = *str;
 		numOfChars = countChars(str, *str);
 		if (numOfChars > 2)
 		{
-			tempNum = ft_itoa(numOfChars);
-			strncat(tempNum, str, 1);
-			strcat(buffer, tempNum);
+			result += std::to_string(numOfChars);
+			result.push_back(*str);
 			str += numOfChars;
-			free(tempNum);
 		}
 		else
 		{
 			while (*str && *str == temp)
 			{
 				if (*str != '\n')
-					strncat(buffer, str, 1);
+					result.push_back(*str);
 				str++;
 			}
 		}
 	}
-	strcat(buffer, "\0");
-	return (buffer);
+	return (result);
 }

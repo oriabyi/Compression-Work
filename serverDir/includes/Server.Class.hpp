@@ -27,6 +27,7 @@ protected:
 	static void					session(boost::asio::ip::tcp::socket socket);
 	
 	static short				getCheckHeader(class Server *server, boost::asio::ip::tcp::socket *socket);
+	static void					getElement(class Server *server, boost::asio::ip::tcp::socket *socket, size_t *magic, size_t bytes);
 	static void					sendHeader(class Server *server, boost::asio::ip::tcp::socket *socket);
 	
 	static void 				ping_Request(class Server *server, boost::asio::ip::tcp::socket *socket);
@@ -39,6 +40,6 @@ protected:
 	static void 				errorGot(class Server *server, boost::asio::ip::tcp::socket *socket, short errorCode);
 };
 
-char							*algCompresss(char *str, short *requestCode);
+std::string 				algCompress(char *str, short *requestCode);
 
 #endif
