@@ -126,4 +126,4 @@ I would make chat with encryption (one of SHA-2) of clients messages,
 with saving the communication history on the server (something like telegram is). At first.
 
 
-												Made by Oleksandr Riabyi.				
+										Made by Oleksandr Riabyi.				
