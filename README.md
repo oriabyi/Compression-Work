@@ -48,7 +48,7 @@ clang++ -Wall -Wextra -Werror -std=c++11 -lboost_system
 	2.1.3. Do the same with clientDir/Makefile.
 
 3. Description of my code
-
+```
 3.1. Client
 	3.1.1. Usage: ./client host port requestCode ;
 	3.1.2. Check arguments ;
@@ -89,7 +89,7 @@ clang++ -Wall -Wextra -Werror -std=c++11 -lboost_system
 	  (after header, where header.requestCode = OK (0), and also header.length = (length of our compressed message)) ;
 	3.2.9. Close socket ;
 	3.2.10. Waiting for the next connection ...
-
+```
 Also everywhere I am looking for the correct execution of functions.
 
 4. Features of implementation
