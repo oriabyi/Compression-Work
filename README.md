@@ -32,8 +32,6 @@ socket and return a compressed version of that data.
 	aaaaabbbbbbaaabb => 5a6b3abb
 	abcdefg => abcdefg
 
-If server gets empty string ("\0")
-
 2. Project developed
 
 The project is written in C++11,  developed on Mac OS X 10.13.3, BuildVersion - 17D47.
@@ -110,6 +108,7 @@ NAME - name of directory, in which you want to put all extracted files.
 $ mkdir NAME && tar -xv --lzma -f compressionHomework.tar.xz -C NAME && cd NAME
 
 7. Server responses
+```
 0	-	OK
 1	-	Unknown ERROR
 2	-	Message Too Large
@@ -119,6 +118,7 @@ $ mkdir NAME && tar -xv --lzma -f compressionHomework.tar.xz -C NAME && cd NAME
 35	-	Message contains capital characters
 36	-	Message contains bad characters
 37	-	Empty string ("\0")
+```
 
 8. Description of improvements that i would make to my code if given more time or resources
 
