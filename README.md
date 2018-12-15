@@ -108,17 +108,17 @@ NAME - name of directory, in which you want to put all extracted files.
 $ mkdir NAME && tar -xv --lzma -f compressionHomework.tar.xz -C NAME && cd NAME
 
 7. Server responses
-```
-0	-	OK
-1	-	Unknown ERROR
-2	-	Message Too Large
-3	-	Wrong Request Code
-33	-	Wrong Magic Number
-34	-	Message contains numbers
-35	-	Message contains capital characters
-36	-	Message contains bad characters
-37	-	Empty string ("\0")
-```
+
+	0	-	OK
+	1	-	Unknown ERROR
+	2	-	Message Too Large
+	3	-	Wrong Request Code
+	33	-	Wrong Magic Number
+	34	-	Message contains numbers
+	35	-	Message contains capital characters
+	36	-	Message contains bad characters
+	37	-	Empty string ("\0")
+
 
 8. Description of improvements that i would make to my code if given more time or resources
 
@@ -126,4 +126,4 @@ I would make chat with encryption (one of SHA-2) of clients messages,
 with saving the communication history on the server (something like telegram is). At first.
 
 
-										Made by Oleksandr Riabyi.				
+Made by Oleksandr Riabyi.				
