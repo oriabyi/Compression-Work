@@ -119,6 +119,3 @@ $ mkdir NAME && tar -xv --lzma -f compressionHomework.tar.xz -C NAME && cd NAME
 36	-	Message contains bad characters
 37	-	Empty string ("\0")
 ```
-
-
-Made by Oleksandr Riabyi.
